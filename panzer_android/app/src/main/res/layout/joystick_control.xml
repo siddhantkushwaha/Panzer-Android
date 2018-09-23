@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JoystickControl">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/steerLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center">
+
+            <io.github.controlwear.virtual.joystick.android.JoystickView
+                android:id="@+id/throttleJoystick"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/circle_1"
+                android:padding="16dp"
+                app:JV_enabled="false"
+                custom:JV_backgroundSizeRatio="60%"
+                custom:JV_buttonDirection="vertical"
+                custom:JV_buttonImage="@drawable/inner_circle_1"
+                custom:JV_buttonSizeRatio="35%" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:onClick="editUrl"
+                android:padding="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo2" />
+
+            <EditText
+                android:id="@+id/urlInput"
+                android:layout_width="400dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="24dp"
+                android:background="@android:color/white"
+                android:hint="ENTER URL"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/lock"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="toggleLayout"
+                android:src="@drawable/unlock" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center">
+
+            <io.github.controlwear.virtual.joystick.android.JoystickView
+                android:id="@+id/steerJoystick"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/circle_2"
+                android:padding="16dp"
+                app:JV_enabled="false"
+                custom:JV_backgroundSizeRatio="60%"
+                custom:JV_borderWidth="40dp"
+                custom:JV_buttonDirection="horizontal"
+                custom:JV_buttonImage="@drawable/inner_circle_2"
+                custom:JV_buttonSizeRatio="35%" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
